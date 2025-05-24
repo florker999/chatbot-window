@@ -47,7 +47,7 @@ const ChatWindow: React.FC<IProps> = (props: IProps) => {
 
   const [writtenMessage, setWrittenMessage] = useState<Message>();
 
-  const client = useRef(new FlowiseClient({ baseUrl: 'https://localhost:3001' })).current;
+  const client = useRef(new FlowiseClient({ baseUrl: 'http://localhost:3000' })).current;
 
   async function query(question: string) {
     const prediction = await client.createPrediction({
@@ -134,7 +134,7 @@ const ChatWindow: React.FC<IProps> = (props: IProps) => {
     }}>
       {/* Header bar */}
       <div style={styles.header}>
-        <span style={styles.headerTitle}>UPNV</span>
+        <span style={styles.headerTitle}>Chatbot</span>
         {/* Toggle button */}
         <button onClick={toggleChatWindow} style={styles.toggleButton} aria-label={isOpen ? "Collapse chat window" : "Expand chat window"}>
           {/* Render arrow icon based on arrowDirection state */}
